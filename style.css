@@ -461,20 +461,163 @@ textarea {
 }
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  .about-grid,
+/* ---------------- UNIVERSAL RESPONSIVE DESIGN ---------------- */
+
+/* Medium Screens (Tablets & Small Laptops) */
+@media (max-width: 1200px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .about-grid, .skills-grid, .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tablet Portrait Mode */
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .projects-grid, .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    font-size: 2.5rem;
+  .experience-timeline::before {
+    left: 30px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .experience-item {
+    width: 100%;
+    left: 0;
+    transform: none;
+    padding-left: 3rem;
+  }
+
+  .experience-item::before {
+    left: 12px !important;
   }
 }
+
+/* Mobile Landscape & Large Phones */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero .description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  .projects-grid, .skills-grid, .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .footer {
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+
 /* ---- Fix Project Card Button Alignment ---- */
 .project-tech {
   display: flex;
