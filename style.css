@@ -326,140 +326,124 @@ nav.scrolled {
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
 }
 
-        /* Experience Section */
-        .experience-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #00ffff, #0080ff);
-            transform: translateX(-50%);
-        }
-
-        .experience-item {
-            position: relative;
-            margin-bottom: 3rem;
-            width: 50%;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 255, 255, 0.1);
-        }
-
-        .experience-item:nth-child(odd) {
-            left: 0;
-            transform: translateX(-50px);
-        }
-
-        .experience-item:nth-child(even) {
-            left: 50%;
-            transform: translateX(50px);
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            width: 15px;
-            height: 15px;
-            background: #00ffff;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
-        }
-
-        .experience-item:nth-child(odd)::before {
-            right: -58px;
-        }
-
-        .experience-item:nth-child(even)::before {
-            left: -58px;
-        }
-
-        .experience-title {
-            color: #00ffff;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-company {
-            color: #ffffff;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-date {
-            color: #aaaaaa;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .experience-description {
-            color: #cccccc;
-            line-height: 1.6;
-        }
-
-/* ---------- CONTACT ---------- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.contact-item {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-  transform: translateX(10px);
-  background: rgba(0, 255, 255, 0.1);
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  border-radius: 5px;
-  color: #fff;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-/* ---------- FOOTER ---------- */
-.footer {
-  background: rgba(0, 0, 0, 0.9);
-  text-align: center;
+/* ---------------------- EXPERIENCE SECTION ---------------------- */
+.experience-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 2rem 0;
-  color: #aaa;
-  border-top: 1px solid rgba(0, 255, 255, 0.15);
 }
 
-@keyframes pulse {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.1; }
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #00ffff, #0080ff);
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
-/* ---------- Hamburger Menu ---------- */
+
+.experience-item {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 50%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.experience-item:nth-child(odd) {
+  left: 0;
+  transform: translateX(-50px);
+}
+
+.experience-item:nth-child(even) {
+  left: 50%;
+  transform: translateX(50px);
+}
+
+/* Dots centered on the line */
+.experience-item::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.8),
+              0 0 25px rgba(128, 0, 255, 0.6);
+}
+
+.experience-title {
+  color: #00ffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.experience-company {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.experience-date {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.experience-description {
+  color: #cccccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ---------- MOBILE VERSION ---------- */
+@media (max-width: 768px) {
+  /* Remove middle line */
+  .experience-timeline::before {
+    display: none;
+  }
+
+  /* Stack items vertically */
+  .experience-item {
+    width: 100%;
+    left: 0 !important;
+    transform: none !important;
+    margin-bottom: 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  }
+
+  /* Small cyan dot on left */
+  .experience-item::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background: #00ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    transform: none;
+  }
+}
+
+/* ---------------------- HAMBURGER MENU ---------------------- */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -528,6 +512,61 @@ textarea {
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
+}
+
+
+/* ---------- CONTACT ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(10px);
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 5px;
+  color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  padding: 2rem 0;
+  color: #aaa;
+  border-top: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.1; }
 }
 
 /* ---------------- UNIVERSAL RESPONSIVE DESIGN ---------------- */
@@ -600,44 +639,6 @@ textarea {
   background: #00ffff;
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(128, 0, 255, 0.6);
-}
-/* ---------- Mobile Layout for Experience Section ---------- */
-@media (max-width: 768px) {
-  /* Remove center line */
-  .experience-timeline::before {
-    display: none;
-  }
-
-  /* Stack cards vertically */
-  .experience-item {
-    width: 100%;
-    left: 0;
-    transform: none;
-    margin-bottom: 2rem;
-    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 255, 255, 0.15);
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
-    position: relative;
-  }
-
-  /* Small glowing dot on left edge for each card */
-  .experience-item::before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 18px;
-    left: 10px;
-    width: 10px;
-    height: 10px;
-    background: #00ffff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-    transform: none;
-  }
-}
-
 }
 
 /* Mobile Landscape & Large Phones */
@@ -776,129 +777,6 @@ textarea {
   margin-bottom: 1.2rem;
 }
 
-/* ---------- EXPERIENCE SECTION ---------- */
-.experience-timeline {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-.experience-timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #00ffff, #0080ff);
-  transform: translateX(-50%);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-}
-
-.experience-item {
-  position: relative;
-  margin-bottom: 3rem;
-  width: 50%;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  border: 1px solid rgba(0, 255, 255, 0.15);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
-  z-index: 1;
-}
-
-.experience-item:nth-child(odd) {
-  left: 0;
-  transform: translateX(-50px);
-}
-
-.experience-item:nth-child(even) {
-  left: 50%;
-  transform: translateX(50px);
-}
-
-.experience-item::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  width: 15px;
-  height: 15px;
-  background: #00ffff;
-  border-radius: 50%;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.8), 0 0 25px rgba(128, 0, 255, 0.6);
-}
-
-.experience-item:nth-child(odd)::before {
-  right: -58px;
-}
-
-.experience-item:nth-child(even)::before {
-  left: -58px;
-}
-
-.experience-title {
-  color: #00ffff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.experience-company {
-  color: #ffffff;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.experience-date {
-  color: #aaaaaa;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.experience-description {
-  color: #cccccc;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-/* ---------- MOBILE VERSION ---------- */
-@media (max-width: 768px) {
-  /* Remove middle line and dots */
-  .experience-timeline::before,
-  .experience-item::before {
-    display: none;
-  }
-
-  /* Stack items vertically */
-  .experience-timeline {
-    padding: 1rem;
-  }
-
-  .experience-item {
-    width: 100%;
-    left: 0 !important;
-    transform: none !important;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
-  }
-
-  .experience-title {
-    font-size: 1.1rem;
-  }
-
-  .experience-company {
-    font-size: 1rem;
-  }
-
-  .experience-description {
-    font-size: 0.9rem;
-  }
-}
-
 
 /* --- Social & Contact Link Styling --- */
 .contact-item a {
@@ -926,4 +804,5 @@ textarea {
 .social-link:hover i, .contact-item:hover i {
   color: #00ffff;
   transform: scale(1.2);
+}
 }
