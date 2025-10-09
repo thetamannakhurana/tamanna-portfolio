@@ -226,7 +226,6 @@ if (hamburger && navLinks) {
     navLinks.classList.toggle('active');
   });
 
-  // Optional: close menu when link is clicked
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');

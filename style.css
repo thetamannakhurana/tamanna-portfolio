@@ -334,6 +334,7 @@ nav.scrolled {
   padding: 2rem 0;
 }
 
+/* Vertical line in the center (desktop) */
 .experience-timeline::before {
   content: '';
   position: absolute;
@@ -346,6 +347,7 @@ nav.scrolled {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
+/* Experience cards */
 .experience-item {
   position: relative;
   margin-bottom: 3rem;
@@ -359,6 +361,7 @@ nav.scrolled {
   z-index: 1;
 }
 
+/* Alternating layout on desktop */
 .experience-item:nth-child(odd) {
   left: 0;
   transform: translateX(-50px);
@@ -369,7 +372,7 @@ nav.scrolled {
   transform: translateX(50px);
 }
 
-/* Dots centered on the line */
+/* Dots on center line (desktop) */
 .experience-item::before {
   content: '';
   position: absolute;
@@ -380,10 +383,10 @@ nav.scrolled {
   height: 14px;
   background: #00ffff;
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.8),
-              0 0 25px rgba(128, 0, 255, 0.6);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.8), 0 0 25px rgba(128, 0, 255, 0.6);
 }
 
+/* Titles & text */
 .experience-title {
   color: #00ffff;
   font-size: 1.2rem;
@@ -409,41 +412,36 @@ nav.scrolled {
   font-size: 0.95rem;
 }
 
-/* ---------- MOBILE VERSION ---------- */
+/* ---------- Mobile Version ---------- */
 @media (max-width: 768px) {
-  /* Remove middle line */
+  /* Move the vertical line to the left side */
   .experience-timeline::before {
-    display: none;
+    left: 25px;
+    transform: none;
   }
 
-  /* Stack items vertically */
+  /* Stack cards vertically */
   .experience-item {
     width: 100%;
-    left: 0 !important;
-    transform: none !important;
+    left: 0;
+    transform: none;
     margin-bottom: 2rem;
-    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    padding: 1.5rem 1.5rem 1.5rem 3rem;
   }
 
-  /* Small cyan dot on left */
+  /* Small cyan dot on the left line */
   .experience-item::before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 18px;
-    left: 10px;
+    left: 18px;
+    transform: none;
     width: 10px;
     height: 10px;
     background: #00ffff;
-    border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-    transform: none;
   }
 }
 
-/* ---------------------- HAMBURGER MENU ---------------------- */
+
+/* ---------- HAMBURGER MENU ---------- */
 .hamburger {
   display: none;
   flex-direction: column;
