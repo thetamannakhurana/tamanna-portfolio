@@ -343,6 +343,7 @@ nav.scrolled {
   width: 2px;
   background: linear-gradient(to bottom, #00ffff, #0080ff);
   transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
 .experience-item {
@@ -375,7 +376,7 @@ nav.scrolled {
   height: 15px;
   background: #00ffff;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
 }
 
 .experience-title {
@@ -401,14 +402,13 @@ nav.scrolled {
   line-height: 1.6;
 }
 
-/* ---------- MOBILE VIEW ---------- */
+/* ---------- MOBILE EXPERIENCE VIEW ---------- */
 @media (max-width: 768px) {
   .experience-timeline {
     max-width: 100%;
     padding: 0 1rem;
   }
 
-  /* Remove center line */
   .experience-timeline::before {
     left: 20px;
     transform: none;
@@ -419,6 +419,7 @@ nav.scrolled {
     left: 0 !important;
     transform: none !important;
     padding-left: 3rem;
+    margin-bottom: 2rem;
   }
 
   .experience-item::before {
@@ -426,6 +427,8 @@ nav.scrolled {
     transform: none;
     width: 10px;
     height: 10px;
+    background: #00ffff;
+    border-radius: 50%;
   }
 }
 
@@ -500,6 +503,7 @@ nav.scrolled {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
 }
+
 
 
 /* ---------- CONTACT ---------- */
