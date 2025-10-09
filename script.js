@@ -216,3 +216,21 @@ style.textContent = `
   .fade-in { animation: fadeInUp 0.8s ease-out forwards; }
 `;
 document.head.appendChild(style);
+// ---------- Hamburger Menu Toggle ----------
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Optional: close menu when link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+}
