@@ -5,6 +5,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Close mobile menu after clicking
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      if (hamburger && navLinks) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
     }
   });
 });
@@ -14,6 +22,25 @@ window.addEventListener('scroll', () => {
   const navbar = document.getElementById('navbar');
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
+
+// ---------- Hamburger Menu Toggle ----------
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
+  });
+}
 
 // ---------- Typing Effect ----------
 function typeWriter(element, text, speed = 120) {
@@ -44,7 +71,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.section, .project-card, .skill-category').forEach(el => observer.observe(el));
+document.querySelectorAll('.section, .project-card, .skill-category, .experience-item').forEach(el => observer.observe(el));
 
 // ---------- Stat Counter ----------
 function animateCounter(element, target, duration = 2000) {
@@ -66,8 +93,15 @@ const statObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const number = entry.target.querySelector('.stat-number');
-      const value = parseInt(number.textContent.replace(/\D/g, '')) || 0;
-      animateCounter(number, value);
+      const text = number.textContent;
+      const value = parseInt(text.replace(/\D/g, '')) || 0;
+      
+      // Special handling for "6th" ranking
+      if (text.includes('th')) {
+        number.textContent = '6th';
+      } else {
+        animateCounter(number, value);
+      }
       statObserver.unobserve(entry.target);
     }
   });
@@ -137,6 +171,12 @@ function createMatrixRain() {
     }
   }
   setInterval(draw, 35);
+  
+  // Resize canvas on window resize
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 }
 createMatrixRain();
 
@@ -178,7 +218,9 @@ if (contactForm) {
     setTimeout(() => toast.remove(), 4000);
 
     // Reset form
-    contactForm.reset();
+    if (response.ok) {
+      contactForm.reset();
+    }
   });
 }
 
@@ -193,43 +235,41 @@ styleToast.textContent = `
 }`;
 document.head.appendChild(styleToast);
 
-
-// ---------- Subtle Float Animation ----------
+// ---------- Subtle Float Animation for Project Cards ----------
 document.querySelectorAll('.project-card').forEach((card, index) => {
   card.style.animation = `float 6s ease-in-out infinite`;
   card.style.animationDelay = `${index * -2}s`;
 });
 
-// ---------- Add Floating Animation Styles ----------
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+// ---------- Parallax Effect for Hero (Optional) ----------
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const hero = document.querySelector('.hero');
+  if (hero && window.innerWidth > 768) {
+    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
   }
+});
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .fade-in { animation: fadeInUp 0.8s ease-out forwards; }
-`;
-document.head.appendChild(style);
-// ---------- Hamburger Menu Toggle ----------
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
+// ---------- Add Glitch Effect to Logo ----------
+const logo = document.querySelector('.logo');
+if (logo) {
+  logo.addEventListener('mouseenter', function() {
+    this.style.animation = 'glitch 0.5s ease-in-out';
   });
 
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-    });
+  logo.addEventListener('animationend', function() {
+    this.style.animation = '';
   });
 }
+
+// Add glitch animation
+const glitchStyle = document.createElement('style');
+glitchStyle.textContent = `
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}`;
+document.head.appendChild(glitchStyle);
