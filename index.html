@@ -4,35 +4,36 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tamanna Khurana — Cybersecurity · SDE</title>
-  <meta name="description" content="Tamanna Khurana — Cybersecurity engineer and software developer, NFSU Delhi."/>
+  <meta name="description" content="Tamanna Khurana — Cybersecurity engineer and full-stack developer, NFSU Delhi."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:wght@300;400;600;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Scroll progress bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <canvas id="globalBg"></canvas>
-  <canvas id="sparks"></canvas>
-
-  <div class="loader" id="loader">
-    <div class="loader-name">TAMANNA.TK</div>
-    <div class="loader-bar"><div class="loader-fill" id="lf"></div></div>
-    <div class="loader-pct mono" id="lp">0%</div>
-  </div>
-
+  <div class="scroll-bar" id="scrollBar"></div>
+  <canvas id="bgCanvas"></canvas>
+  <canvas id="sparkCanvas"></canvas>
   <div class="cur-dot" id="cd"></div>
   <div class="cur-ring" id="cr"></div>
-  <!-- Cursor trail dots -->
   <div class="trail-wrap" id="trailWrap"></div>
+
+  <div class="loader" id="loader">
+    <div class="ldr-hex">
+      <svg viewBox="0 0 100 100"><polygon points="50,2 95,26 95,74 50,98 5,74 5,26"/></svg>
+      <span class="ldr-icon"><i class="fas fa-shield-halved"></i></span>
+    </div>
+    <div class="ldr-name mono">TAMANNA.TK</div>
+    <div class="ldr-bar"><div class="ldr-fill" id="lf"></div></div>
+    <div class="ldr-pct mono" id="lp">0%</div>
+    <div class="ldr-status mono" id="ls">Initialising systems...</div>
+  </div>
 
   <nav id="nav">
     <a href="#hero" class="nav-logo">TK<span>.</span></a>
+    <div class="nav-pill" id="navPill"></div>
     <button class="menu-btn" id="mb"><span></span><span></span></button>
   </nav>
 
@@ -49,7 +50,7 @@
     <div class="mo-foot">
       <a href="https://github.com/thetamannakhurana" target="_blank">GitHub</a>
       <a href="https://linkedin.com/in/tamanna-khurana-73b083267" target="_blank">LinkedIn</a>
-      <a href="/cdn-cgi/l/email-protection#34405c51405559555a5a555f5c4146555a55745359555d581a575b59">Email</a>
+      <a href="mailto:thetamannakhurana@gmail.com">Email</a>
       <a href="assets/Tamanna_Khurana_Resume.pdf" download>Resume</a>
     </div>
   </div>
@@ -66,7 +67,7 @@
     </div>
     <div class="hero-body">
       <div class="hero-left">
-        <div class="hero-eyebrow mono"><span class="live"></span>Available · Delhi, India</div>
+        <div class="hero-eyebrow mono"><span class="live"></span>Available for hire · Delhi, India</div>
         <div class="hero-role mono"><span class="slash">/</span><span id="typer"></span><span class="tcur">|</span></div>
         <p class="hero-sub">Cybersecurity engineer &amp; software developer.<br>Building secure, scalable systems from the ground up.</p>
         <div class="hero-cta">
@@ -83,12 +84,10 @@
     </div>
     <div class="marq-band">
       <div class="marq-row"><div class="marq-inner">
-        <span>VAPT</span><b>·</b><span>PENETRATION TESTING</span><b>·</b><span>RED TEAMING</span><b>·</b><span>FULL-STACK SDE</span><b>·</b><span>ETHICAL HACKING</span><b>·</b><span>NFSU DELHI</span><b>·</b><span>REACT · PYTHON · FLASK</span><b>·</b><span>DOCKER</span><b>·</b>
-        <span>VAPT</span><b>·</b><span>PENETRATION TESTING</span><b>·</b><span>RED TEAMING</span><b>·</b><span>FULL-STACK SDE</span><b>·</b><span>ETHICAL HACKING</span><b>·</b><span>NFSU DELHI</span><b>·</b><span>REACT · PYTHON · FLASK</span><b>·</b><span>DOCKER</span><b>·</b>
+        <span>VAPT</span><b>·</b><span>PENETRATION TESTING</span><b>·</b><span>RED TEAMING</span><b>·</b><span>FULL-STACK SDE</span><b>·</b><span>ETHICAL HACKING</span><b>·</b><span>NFSU DELHI</span><b>·</b><span>REACT · PYTHON · FLASK</span><b>·</b><span>DOCKER</span><b>·</b><span>VAPT</span><b>·</b><span>PENETRATION TESTING</span><b>·</b><span>RED TEAMING</span><b>·</b><span>FULL-STACK SDE</span><b>·</b><span>ETHICAL HACKING</span><b>·</b><span>NFSU DELHI</span><b>·</b><span>REACT · PYTHON · FLASK</span><b>·</b><span>DOCKER</span><b>·</b>
       </div></div>
       <div class="marq-row rev"><div class="marq-inner">
-        <span>BURP SUITE</span><b>·</b><span>METASPLOIT</span><b>·</b><span>NMAP</span><b>·</b><span>WIRESHARK</span><b>·</b><span>CTF CHALLENGES</span><b>·</b><span>ONGC INTERN</span><b>·</b><span>TALENTXM</span><b>·</b><span>GDGoC AI/ML LEAD</span><b>·</b>
-        <span>BURP SUITE</span><b>·</b><span>METASPLOIT</span><b>·</b><span>NMAP</span><b>·</b><span>WIRESHARK</span><b>·</b><span>CTF CHALLENGES</span><b>·</b><span>ONGC INTERN</span><b>·</b><span>TALENTXM</span><b>·</b><span>GDGoC AI/ML LEAD</span><b>·</b>
+        <span>BURP SUITE</span><b>·</b><span>METASPLOIT</span><b>·</b><span>NMAP</span><b>·</b><span>WIRESHARK</span><b>·</b><span>CTF CHALLENGES</span><b>·</b><span>ONGC INTERN</span><b>·</b><span>TALENTXM</span><b>·</b><span>GDGoC AI/ML LEAD</span><b>·</b><span>BURP SUITE</span><b>·</b><span>METASPLOIT</span><b>·</b><span>NMAP</span><b>·</b><span>WIRESHARK</span><b>·</b><span>CTF CHALLENGES</span><b>·</b><span>ONGC INTERN</span><b>·</b><span>TALENTXM</span><b>·</b><span>GDGoC AI/ML LEAD</span><b>·</b>
       </div></div>
     </div>
   </section>
@@ -98,30 +97,29 @@
     <div class="container">
       <p class="sec-label mono" data-rev>01 — ABOUT</p>
       <div class="about-top">
-        <div class="about-vl">
-          <div class="vl-line"></div>
-          <span class="vl-txt mono">Who I Am</span>
-        </div>
-        <div class="about-intro" data-rev data-rev-d="0.05">
+        <div class="about-vl"><div class="vl-line"></div><span class="vl-txt mono">Who I Am</span></div>
+        <div class="about-intro" data-rev data-rev-d="0.08">
           <p class="about-big">I'm a <strong>cybersecurity engineer &amp; software developer</strong> — I can take any project from ground zero to a production-ready launch. If you'd like to work together, <a href="#contact" class="il">get in touch</a>.</p>
           <p class="about-sm">Pursuing B.Tech–M.Tech in CSE (Cybersecurity) at <strong>National Forensic Sciences University, Delhi Campus</strong>. Hands-on VAPT at ONGC, live platforms deployed nationwide, Top 6 at DSCI's CyberForHer Hackathon.</p>
           <div class="about-links">
-            <a href="https://github.com/thetamannakhurana" target="_blank" class="mag al">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
-            <a href="https://linkedin.com/in/tamanna-khurana-73b083267" target="_blank" class="mag al">LinkedIn <i class="fas fa-arrow-up-right-from-square"></i></a>
-            <a href="/cdn-cgi/l/email-protection#62160a0716030f030c0c03090a1710030c0322050f030b0e4c010d0f" class="mag al">Email <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/thetamannakhurana" target="_blank" class="al mag">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="https://linkedin.com/in/tamanna-khurana-73b083267" target="_blank" class="al mag">LinkedIn <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="mailto:thetamannakhurana@gmail.com" class="al mag">Email <i class="fas fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
       </div>
 
-      <!-- WHO CARDS — slide in from right, staggered -->
+      <!-- WHO-CARDS: side by side, pendulum swing from right -->
       <div class="who-cards" id="whoCards">
 
-        <!-- Card 1: Cyan — Cybersecurity (no Top 6 repeat) -->
         <div class="who-card wc-cyan" id="wc0">
-          <div class="wc-number mono">01</div>
-          <div class="wc-top">
+          <div class="wc-scanline"></div>
+          <div class="wc-corner tl"></div><div class="wc-corner tr"></div>
+          <div class="wc-corner bl"></div><div class="wc-corner br"></div>
+          <div class="wc-num mono">01</div>
+          <div class="wc-head">
             <div class="wc-icon"><i class="fas fa-shield-halved"></i></div>
-            <div class="wc-label mono">CYBERSECURITY STUDENT</div>
+            <span class="wc-tag mono">CYBERSECURITY STUDENT</span>
           </div>
           <h3 class="wc-title">Cyber<br>Security</h3>
           <p class="wc-desc">VAPT · Pen Testing · Red Teaming · Threat Modeling · Ethical Hacking · Malware Analysis. I find vulnerabilities before the bad guys do.</p>
@@ -131,15 +129,16 @@
             <div class="wc-stat"><strong>15+</strong><span>Certifications</span></div>
           </div>
           <div class="wc-tools mono">Burp Suite · Nmap · Wireshark · Metasploit · Nikto · Hydra</div>
-          
         </div>
 
-        <!-- Card 2: Gold — Developer (no NFSU in stats) -->
         <div class="who-card wc-gold" id="wc1">
-          <div class="wc-number mono">02</div>
-          <div class="wc-top">
+          <div class="wc-scanline"></div>
+          <div class="wc-corner tl"></div><div class="wc-corner tr"></div>
+          <div class="wc-corner bl"></div><div class="wc-corner br"></div>
+          <div class="wc-num mono">02</div>
+          <div class="wc-head">
             <div class="wc-icon"><i class="fas fa-code"></i></div>
-            <div class="wc-label mono">FULL-STACK DEVELOPER</div>
+            <span class="wc-tag mono">FULL-STACK DEVELOPER</span>
           </div>
           <h3 class="wc-title">Software<br>Developer</h3>
           <p class="wc-desc">React · Python · Flask · Node.js · Docker · REST APIs · SQL · Tailwind · GitHub Actions. Building production apps from scratch.</p>
@@ -149,7 +148,6 @@
             <div class="wc-stat"><strong>4+</strong><span>Platforms Deployed</span></div>
           </div>
           <div class="wc-tools mono">React · Flask · Node · Docker · Vercel · GitHub Actions</div>
-          
         </div>
 
       </div>
@@ -179,9 +177,10 @@
         <div class="proj-row" data-proj><div class="pl"><span class="pn mono">01</span><div class="pthumb t1"></div></div><div class="pr"><h3 class="ptitle">SecureAudit Pro</h3><p>Automated VAPT platform with multi-mode scanning, CVSS scoring, live dashboards and exportable PDF reporting.</p><div class="pchips"><span>Python</span><span>Flask</span><span>React</span><span>Docker</span><span>REST APIs</span></div><div class="plinks"><a href="https://github.com/thetamannakhurana/SecureAudit-Pro" target="_blank" class="pl-a mag">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a><a href="assets/SecureAuditPro_Report.pdf" target="_blank" class="pl-a mag">Report <i class="fas fa-file-alt"></i></a></div></div></div>
         <div class="proj-row" data-proj><div class="pl"><span class="pn mono">02</span><div class="pthumb t2"></div></div><div class="pr"><h3 class="ptitle">NFSU Projects Database</h3><p>Searchable platform for NFSU students and faculty to showcase and manage academic projects.</p><div class="pchips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div><div class="plinks"><a href="https://nfsu-projects.vercel.app/" target="_blank" class="pl-a mag">Live Site <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
         <div class="proj-row" data-proj><div class="pl"><span class="pn mono">03</span><div class="pthumb t3"></div></div><div class="pr"><h3 class="ptitle">Anvakrit — National CSI Competition</h3><p>Official platform for NFSU's national crime scene investigation competition — events, registration, live results.</p><div class="pchips"><span>React</span><span>JavaScript</span><span>CSS</span><span>Vercel</span></div><div class="plinks"><a href="https://anvakrit.vercel.app" target="_blank" class="pl-a mag">Main Site <i class="fas fa-arrow-up-right-from-square"></i></a><a href="https://anvakritround1.vercel.app" target="_blank" class="pl-a mag">Round 1 <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
-        <div class="proj-row" data-proj><div class="pl"><span class="pn mono">04</span><div class="pthumb t4"></div></div><div class="pr"><h3 class="ptitle">NFSU Cybersecurity Conference</h3><p>Production site for "Securing the Digital Future" — organized with MHA, I4C &amp; AICTE. Speaker profiles, panels, registration and feedback portal.</p><div class="pchips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div><div class="plinks"><a href="https://nfsuconference.vercel.app/" target="_blank" class="pl-a mag">Conference <i class="fas fa-arrow-up-right-from-square"></i></a><a href="https://nfsu-con-feedback.vercel.app/" target="_blank" class="pl-a mag">Feedback <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
+        <div class="proj-row" data-proj><div class="pl"><span class="pn mono">04</span><div class="pthumb t4"></div></div><div class="pr"><h3 class="ptitle">NFSU Cybersecurity Conference</h3><p>Production site for "Securing the Digital Future" — organized with MHA, I4C &amp; AICTE. Speaker profiles, registration and feedback portal.</p><div class="pchips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div><div class="plinks"><a href="https://nfsuconference.vercel.app/" target="_blank" class="pl-a mag">Conference <i class="fas fa-arrow-up-right-from-square"></i></a><a href="https://nfsu-con-feedback.vercel.app/" target="_blank" class="pl-a mag">Feedback <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
         <div class="proj-row" data-proj><div class="pl"><span class="pn mono">05</span><div class="pthumb t5"></div></div><div class="pr"><h3 class="ptitle">Algorithmic Trading Bot</h3><p>Python bot using SMA/EMA indicators, live market APIs and strategy backtesting engine.</p><div class="pchips"><span>Python</span><span>Pandas</span><span>NumPy</span><span>APIs</span></div><div class="plinks"><a href="https://github.com/thetamannakhurana/AlgoTradingBot" target="_blank" class="pl-a mag">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
         <div class="proj-row" data-proj><div class="pl"><span class="pn mono">06</span><div class="pthumb t6"></div></div><div class="pr"><h3 class="ptitle">Defenders Connect VAPT</h3><p>End-to-end pen test on defendersconnect.com — recon, scanning, exploitation and full mitigation report.</p><div class="pchips"><span>Nmap</span><span>Nikto</span><span>Metasploit</span><span>Manual Testing</span></div><div class="plinks"><a href="https://defendersconnect.com" target="_blank" class="pl-a mag">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
+        <div class="proj-row" data-proj><div class="pl"><span class="pn mono">07</span><div class="pthumb t7"></div></div><div class="pr"><h3 class="ptitle">Custom ErrorSounds — VS Code Extension</h3><p>Published VS Code extension (6 installs, v1.0.2) that plays custom sounds on terminal errors and successes. Three modes: Alone, With People, and Random — mode picker triggers every new day automatically.</p><div class="pchips"><span>TypeScript</span><span>VS Code API</span><span>Node.js</span><span>Extension Dev</span></div><div class="plinks"><a href="https://marketplace.visualstudio.com/items?itemName=tamannakhurana.custom-sound-on-errors" target="_blank" class="pl-a mag">Marketplace <i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
       </div>
     </div>
   </section>
@@ -192,34 +191,13 @@
       <p class="sec-label mono" data-rev>04 — WHERE I'VE WORKED</p>
       <h2 class="sec-title" data-words>EXPERIENCE</h2>
       <div class="exp-list">
-        <div class="exp-row" data-exp>
-          <div class="exp-meta"><span class="exp-date mono">May – Jul 2025</span><span class="exp-badge mono">Internship</span></div>
-          <div class="exp-body"><h3 class="exp-role">Cybersecurity Intern</h3><div class="exp-org">Oil and Natural Gas Corporation (ONGC)</div><p>Performed VAPT and password-cracking simulations, malware detection via image-based analysis, and enterprise network security testing.</p><div class="exp-chips"><span>VAPT</span><span>Malware Analysis</span><span>Network Security</span></div></div>
-        </div>
-        <div class="exp-row" data-exp>
-          <div class="exp-meta"><span class="exp-date mono">Nov – Dec 2025</span><span class="exp-badge mono">Internship</span></div>
-          <div class="exp-body"><h3 class="exp-role">AI/ML Intern</h3><div class="exp-org">TalentXM</div><p>Built and optimized platform features across frontend and backend in a fast-paced product environment.</p><div class="exp-chips"><span>Full-Stack</span><span>Product Dev</span><span>SDE</span></div></div>
-        </div>
-        <div class="exp-row" data-exp>
-          <div class="exp-meta"><span class="exp-date mono">Sep 2025 – Present</span><span class="exp-badge mono">Lead</span></div>
-          <div class="exp-body"><h3 class="exp-role">AI/ML Lead</h3><div class="exp-org">Google Developer Groups on Campus (GDGoC)</div><p>Spearheading AI/ML initiatives, mentoring students and designing technical workshops integrating cybersecurity.</p><div class="exp-chips"><span>Leadership</span><span>Mentorship</span><span>Workshops</span></div></div>
-        </div>
-        <div class="exp-row" data-exp>
-          <div class="exp-meta"><span class="exp-date mono">Mar – Aug 2025</span><span class="exp-badge mono">CTO</span></div>
-          <div class="exp-body"><h3 class="exp-role">Chief Technology Officer</h3><div class="exp-org">Cybethix</div><p>Led vulnerability scanning and malware analysis; implemented detection systems and monitored network traffic.</p><div class="exp-chips"><span>CTO</span><span>Threat Detection</span><span>Architecture</span></div></div>
-        </div>
-        <div class="exp-row" data-exp>
-          <div class="exp-meta"><span class="exp-date mono">Feb – Aug 2025</span><span class="exp-badge mono">Lead</span></div>
-          <div class="exp-body"><h3 class="exp-role">Team Lead</h3><div class="exp-org">Defenders Connect</div><p>Led nationwide cybersecurity events and CTF challenges; mentored students and secured production infrastructure.</p><div class="exp-chips"><span>CTF</span><span>Events</span><span>Infra Security</span></div></div>
-        </div>
-        <div class="exp-row" data-exp>
-          <div class="exp-meta"><span class="exp-date mono">Nov 2022 – Present</span><span class="exp-badge mono">President</span></div>
-          <div class="exp-body"><h3 class="exp-role">NSS President</h3><div class="exp-org">National Forensic Sciences University</div><p>Directed university-wide outreach, managed 100+ volunteers, promoted national service and digital literacy.</p><div class="exp-chips"><span>Leadership</span><span>100+ Volunteers</span><span>Digital Literacy</span></div></div>
-        </div>
-        <div class="exp-row" data-exp>
-          <div class="exp-meta"><span class="exp-date mono">Feb 2023 – Feb 2024</span><span class="exp-badge mono">Society</span></div>
-          <div class="exp-body"><h3 class="exp-role">Fayol — Management Society</h3><div class="exp-org">National Forensic Sciences University</div><p>Organizational management and execution of departmental technical and cultural events.</p><div class="exp-chips"><span>Management</span><span>Events</span><span>Coordination</span></div></div>
-        </div>
+        <div class="exp-row" data-exp><div class="exp-meta"><span class="exp-date mono">May – Jul 2025</span><span class="exp-badge mono">Internship</span></div><div class="exp-body"><h3 class="exp-role">Cybersecurity Intern</h3><div class="exp-org">Oil and Natural Gas Corporation (ONGC)</div><p>Performed VAPT and password-cracking simulations, malware detection via image-based analysis, and enterprise network security testing.</p><div class="exp-chips"><span>VAPT</span><span>Malware Analysis</span><span>Network Security</span></div></div></div>
+        <div class="exp-row" data-exp><div class="exp-meta"><span class="exp-date mono">Nov – Dec 2025</span><span class="exp-badge mono">Internship</span></div><div class="exp-body"><h3 class="exp-role">AI/ML Intern</h3><div class="exp-org">TalentXM</div><p>Built and optimized platform features across frontend and backend in a fast-paced product environment.</p><div class="exp-chips"><span>Full-Stack</span><span>Product Dev</span><span>SDE</span></div></div></div>
+        <div class="exp-row" data-exp><div class="exp-meta"><span class="exp-date mono">Sep 2025 – Present</span><span class="exp-badge mono">Lead</span></div><div class="exp-body"><h3 class="exp-role">AI/ML Lead</h3><div class="exp-org">Google Developer Groups on Campus (GDGoC)</div><p>Spearheading AI/ML initiatives, mentoring students and designing technical workshops integrating cybersecurity.</p><div class="exp-chips"><span>Leadership</span><span>Mentorship</span><span>Workshops</span></div></div></div>
+        <div class="exp-row" data-exp><div class="exp-meta"><span class="exp-date mono">Mar – Aug 2025</span><span class="exp-badge mono">CTO</span></div><div class="exp-body"><h3 class="exp-role">Chief Technology Officer</h3><div class="exp-org">Cybethix</div><p>Led vulnerability scanning and malware analysis; implemented detection systems and monitored network traffic.</p><div class="exp-chips"><span>CTO</span><span>Threat Detection</span><span>Architecture</span></div></div></div>
+        <div class="exp-row" data-exp><div class="exp-meta"><span class="exp-date mono">Feb – Aug 2025</span><span class="exp-badge mono">Lead</span></div><div class="exp-body"><h3 class="exp-role">Team Lead</h3><div class="exp-org">Defenders Connect</div><p>Led nationwide cybersecurity events and CTF challenges; mentored students and secured production infrastructure.</p><div class="exp-chips"><span>CTF</span><span>Events</span><span>Infra Security</span></div></div></div>
+        <div class="exp-row" data-exp><div class="exp-meta"><span class="exp-date mono">Nov 2022 – Present</span><span class="exp-badge mono">President</span></div><div class="exp-body"><h3 class="exp-role">NSS President</h3><div class="exp-org">National Forensic Sciences University</div><p>Directed university-wide outreach, managed 100+ volunteers, promoted national service and digital literacy.</p><div class="exp-chips"><span>Leadership</span><span>100+ Volunteers</span><span>Digital Literacy</span></div></div></div>
+        <div class="exp-row" data-exp><div class="exp-meta"><span class="exp-date mono">Feb 2023 – Feb 2024</span><span class="exp-badge mono">Society</span></div><div class="exp-body"><h3 class="exp-role">Fayol — Management Society</h3><div class="exp-org">National Forensic Sciences University</div><p>Organizational management and execution of departmental technical and cultural events.</p><div class="exp-chips"><span>Management</span><span>Events</span><span>Coordination</span></div></div></div>
       </div>
     </div>
   </section>
@@ -233,25 +211,10 @@
         <div data-rev data-rev-d="0.05">
           <p class="c-intro">Open to internships, collaborations, CTF teams, and building cool things. Drop a message.</p>
           <div class="c-links">
-            <a href="/cdn-cgi/l/email-protection#4b3f232e3f2a262a25252a20233e392a252a0b2c262a222765282426" class="cl mag">
-              <i class="fas fa-envelope"></i>
-              <div><span class="mono">EMAIL</span><em><span class="__cf_email__" data-cfemail="93e7fbf6e7f2fef2fdfdf2f8fbe6e1f2fdf2d3f4fef2faffbdf0fcfe">[email&#160;protected]</span></em></div>
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-            <a href="https://linkedin.com/in/tamanna-khurana-73b083267" target="_blank" class="cl mag">
-              <i class="fab fa-linkedin"></i>
-              <div><span class="mono">LINKEDIN</span><em>tamanna-khurana-73b083267</em></div>
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-            <a href="https://github.com/thetamannakhurana" target="_blank" class="cl mag">
-              <i class="fab fa-github"></i>
-              <div><span class="mono">GITHUB</span><em>thetamannakhurana</em></div>
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-            <div class="cl">
-              <i class="fas fa-location-dot"></i>
-              <div><span class="mono">LOCATION</span><em>Delhi, India</em></div>
-            </div>
+            <a href="mailto:thetamannakhurana@gmail.com" class="cl mag"><i class="fas fa-envelope"></i><div><span class="mono">EMAIL</span><em>thetamannakhurana@gmail.com</em></div><i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="https://linkedin.com/in/tamanna-khurana-73b083267" target="_blank" class="cl mag"><i class="fab fa-linkedin"></i><div><span class="mono">LINKEDIN</span><em>tamanna-khurana-73b083267</em></div><i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/thetamannakhurana" target="_blank" class="cl mag"><i class="fab fa-github"></i><div><span class="mono">GITHUB</span><em>thetamannakhurana</em></div><i class="fas fa-arrow-up-right-from-square"></i></a>
+            <div class="cl"><i class="fas fa-location-dot"></i><div><span class="mono">LOCATION</span><em>Delhi, India</em></div></div>
           </div>
         </div>
         <form class="c-form" data-rev data-rev-d="0.12" action="https://formspree.io/f/mdkwwowb" method="POST">
